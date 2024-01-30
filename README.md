@@ -1,12 +1,13 @@
 # Command Line Chat Interface for Google Gemini-Pro
 
-This is a simple command-line chat interface that leverages the Google Gemini-Pro generative AI model to facilitate conversational interactions. The tool is designed to be straightforward and user-friendly, without any superfluous features.
+This is a simple command-line chat interface for the Google Gemini-Pro model. 
+The script is designed to be straightforward and easy to extend upon.
 
 ## Requirements
 
-- Python 3.x
-- An active internet connection
-- A valid Google Gemini API key
+- Python 3.11+
+- Internet connection
+- Google Gemini API key
 
 ## Setup
 
@@ -17,8 +18,8 @@ GOOGLE_GEMINI_API_KEY=your_api_key_here
 
 ## Installation
 
-1. Clone this repository or download the source code.
-2. Install the required dependencies by running `pip install -r requirements.txt` in your terminal. This command installs the necessary Python packages, including the Google Generative AI library and dotenv for environment variable management.
+1. Clone this repository or copy the source code.
+2. Install the required dependencies by running `pip install -r requirements.txt` in your terminal.
 
 ## Usage
 
@@ -26,12 +27,12 @@ To start the chat interface, run the provided Python script from your terminal:
 
 python chat_interface.py
 
-
-Upon launching, the interface will prompt you to enter your queries. The system will respond based on the capabilities of the Google Gemini-Pro model. To end the chat session, type any of the exit commands (`exit`, `quit`, `stop`, `end`, `bye`, `goodbye`, `done`, `break`).
+Upon launching, the interface will prompt you for input. The prompt template can be customized and tools can be added. 
+To end the chat session, type any of the exit commands (`exit`, `quit`, `stop`, `end`, `bye`, `goodbye`, `done`, `break`).
 
 ## Note
 
-This application is designed for educational and experimental purposes. Please ensure you comply with Google's API usage policies and guidelines.
+This application is designed for educational purposes only. Please ensure you comply with Google's API usage policies and guidelines.
 
 ## Support
 
