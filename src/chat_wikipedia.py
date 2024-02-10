@@ -56,7 +56,7 @@ while True:
         page_content = page.content[:15000]  # Get the first 15000 characters of the page content
     except wikipedia.exceptions.DisambiguationError as e:
         print("Your query may refer to multiple topics:")
-        for index, option in enumerate(e.options[:5], start=1):  # Show top 10 options for simplicity
+        for index, option in enumerate(e.options[:5], start=1):  # Show top 5 options for simplicity
             print(f"{index}. {option}")
         
         # Prompt the user to select an option
