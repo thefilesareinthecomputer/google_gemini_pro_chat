@@ -1,4 +1,4 @@
-'''straightforward command line chat interface for google gemini-pro augmented with results from howdoi injected into prompts'''
+'''straightforward command line chat interface for google gemini-pro augmented with results from wikipedia injected into prompts'''
 '''requires a .env file with a GOOGLE_GEMINI_API_KEY variable'''
 
 from dotenv import load_dotenv
