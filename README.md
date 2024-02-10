@@ -2,7 +2,8 @@
 
 This is a simple command-line chat interface for the Google Gemini-Pro model. 
 The script is designed to be straightforward and easy to extend upon.
-There's no user interface intended for this application, but it can be easily adapted to work with a GUI or web interface. The intention for this is an easy copy / paste code template that can be added to any repo for a command line pair programmer or assistant.
+There's no user interface intended for this application, but it can be easily adapted to work with a GUI or web interface. The intention for this is an easy copy / paste code template that can be added to any repo for a command line pair programmer or assistant. 
+There are 2 alternate variations of the chat assistant - 1 has access to howdoi and 1 has access to wikipedia.
 
 ## Requirements
 

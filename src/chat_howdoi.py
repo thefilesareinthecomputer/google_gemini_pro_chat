@@ -39,44 +39,44 @@ print(primer_response)
 exit_words = ['exit', 'quit', 'stop', 'end', 'bye', 'goodbye', 'done', 'break']
 
 while True:
-        user_input = input('\n\nUser: ')
-        
-        command = f"howdoi {user_input} in Python -j"
-        result = subprocess.run(command.split(), stdout=subprocess.PIPE)
+    user_input = input('\n\nUser: ')
+    
+    command = f"howdoi {user_input} in Python -j"
+    result = subprocess.run(command.split(), stdout=subprocess.PIPE)
 
-        answers = json.loads(result.stdout)  # This is now expected to be a list
-        
-        print('\n\n#----------------------------------------howdoi----------------------------------------#\n\n')
-        for item in answers:
-            print(item.get('answer'))  # Use .get() to avoid KeyError if 'answer' key is missing
-        print('\n\n#----------------------------------------howdoi----------------------------------------#\n\n')
+    answers = json.loads(result.stdout)  # This is now expected to be a list
+    
+    print('\n\n#----------------------------------------howdoi----------------------------------------#\n\n')
+    for item in answers:
+        print(item.get('answer'))  # Use .get() to avoid KeyError if 'answer' key is missing
+    print('\n\n#----------------------------------------howdoi----------------------------------------#\n\n')
 
-        llm_prompt = f"I need information on the following topic: {user_input}. Here's what I found: {'; '.join(item.get('answer', '') for item in answers)}. Can you provide more details or examples? If you are able to responde only with Python code, please do so. Please ensure your responses are factually correct, and ensure the code is accurate. Thanks!"
-        
-        if not user_input:
-            continue
+    llm_prompt = f"I need information on the following topic: {user_input}. Here's what I found: {'; '.join(item.get('answer', '') for item in answers)}. Can you provide more details or examples? If you are able to responde only with Python code, please do so. Please ensure your responses are factually correct, and ensure the code is accurate. Thanks!"
+    
+    if not user_input:
+        continue
 
-        query = user_input.lower().split()
-        if not query:
-            continue
+    query = user_input.lower().split()
+    if not query:
+        continue
 
-        if query[0] in exit_words or query[1] in exit_words:
-            print('Ending chat.')
-            break
+    if query[0] in exit_words or query[1] in exit_words:
+        print('Ending chat.')
+        break
 
-        else:
-            response = chat.send_message(f'{llm_prompt}')
-            if response:
-                print(response.text)
-            if not response:
-                attempt_count = 1  # Initialize re-try attempt count
-                while attempt_count < 5:
-                    response = chat.send_message(f'{llm_prompt}')
-                    attempt_count += 1  # Increment attempt count
-                    if response:
-                        print(response.text)
-                    else:
-                        print('Chat failed.')
+    else:
+        response = chat.send_message(f'{llm_prompt}')
+        if response:
+            print(response.text)
+        if not response:
+            attempt_count = 1  # Initialize re-try attempt count
+            while attempt_count < 5:
+                response = chat.send_message(f'{llm_prompt}')
+                attempt_count += 1  # Increment attempt count
+                if response:
+                    print(response.text)
+                else:
+                    print('Chat failed.')
                         
                         
                         
